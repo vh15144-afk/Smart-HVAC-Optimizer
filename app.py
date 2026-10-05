@@ -24,10 +24,9 @@ st.set_page_config(
 
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
-
-
-USERNAME = "admin"
-PASSWORD = "hvac123"
+    
+    USERNAME = st.secrets["login"]["username"]
+    PASSWORD = st.secrets["login"]["password"]
 
 
 if not st.session_state.logged_in:
