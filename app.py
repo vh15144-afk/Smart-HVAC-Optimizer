@@ -24,10 +24,6 @@ st.set_page_config(
 
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
-    
-    USERNAME = st.secrets["login"]["username"]
-    PASSWORD = st.secrets["login"]["password"]
-
 
 if not st.session_state.logged_in:
 
@@ -60,7 +56,7 @@ if not st.session_state.logged_in:
             use_container_width=True
         ):
 
-            if username == USERNAME and password == PASSWORD:
+            if username == st.secrets["login"]["username"] and password == st.secrets["login"]["password"]:
 
                 st.session_state.logged_in = True
                 st.rerun()
